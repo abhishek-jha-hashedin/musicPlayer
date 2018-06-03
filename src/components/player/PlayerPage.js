@@ -1,5 +1,6 @@
 import React from "react";
 import MusicPlayer from 'react-responsive-music-player'
+import musicURL from '../../actions/musicApi'
 
 
 class App extends React.Component {
@@ -9,18 +10,10 @@ class App extends React.Component {
         this.state = { link: '' }
     }
     componentDidMount() {
-        fetch('http://mosaic.nativebyte.in/api/music/' + this.props.playlist + '/content/resolve', {
-            method: 'get',
-            headers: new Headers({
-                'Authorization': localStorage.getItem('jwtToken'),
-            })
-        })
-            .then(response => response.json())
-            .then(resp => {
+        let url = musicURL(this.props.playlist)
                 this.setState({
-                    link: resp['data']
+                    link: url
                 })
-            })
     }
     render() {
         const playlist = [
@@ -70,8 +63,8 @@ class App extends React.Component {
         ]
         return (
             <div>
-                {console.log(playlist.url)}
-                {playlist.url !== '' && <MusicPlayer playlist={playlist} playnext = {this.props.playnext}/>}
+                {/* {console.log(playlist.url)} */}
+                {playlist.url !== '' && <MusicPlayer playlist={playlist} playnext = {this.props.playnext} autoplay={true}/>}
 
             </div>
         )
