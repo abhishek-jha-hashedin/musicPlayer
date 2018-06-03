@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body{
+    font-family: Verdana, sans-serif;
+    background: #ff80c9;
+    overflow: hidden;
+    /* background-image:url(https://twimg0-a.akamaihd.net/a/1350072692/t1/img/front_page/jp-mountain@2x.jpg); */
+    /* background: linear-gradient(210deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%); */
+    background-image:url(https://thumbs.dreamstime.com/b/rock-roll-music-blurred-background-electric-guitar-player-stage-colorful-scenic-illumination-82514915.jpg); 
+    background-size: cover;
+    background-attachment:fixed;
+}
+.container{
+    position: relative;
+}
